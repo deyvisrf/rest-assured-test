@@ -1,5 +1,5 @@
 language: java
 
-"scripts": {
-    "test":  " mvn -Dtest=Get test"
-}
+stages:
+  - compile
+  - test
