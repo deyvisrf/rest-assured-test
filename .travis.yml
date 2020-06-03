@@ -1,1 +1,1 @@
-mvn -Dtest=Get test
+language: java
