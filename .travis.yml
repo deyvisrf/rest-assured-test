@@ -3,3 +3,4 @@ language: java
 stages:
   - compile
   - test
+    -  mvn -Dtest=Get test
