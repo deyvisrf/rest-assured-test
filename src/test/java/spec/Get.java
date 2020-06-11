@@ -18,4 +18,15 @@ public class Get extends BaseTest {
                 .statusCode(200)
                 .body("name", is("Luke Skywalker"));
     }
+
+    @Test public void
+    dontAccessWithoutPassword() {
+        given()
+                .log().all()
+        .when()
+                .get("basicauth")
+        .then()
+                .log().all()
+                .statusCode(401);
+    }
 }
