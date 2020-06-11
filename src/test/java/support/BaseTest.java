@@ -8,8 +8,7 @@ public class BaseTest implements Constants {
 
     @BeforeClass
     public static void setup() {
-        RestAssured.baseURI = baseUrl1;
-        RestAssured.baseURI = baseUrl2;
+        RestAssured.baseURI = baseUrl;
 
         RequestSpecBuilder reqBuilder = new RequestSpecBuilder();
         reqBuilder.setContentType(contentType);

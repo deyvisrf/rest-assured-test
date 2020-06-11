@@ -12,7 +12,7 @@ public class Get extends BaseTest {
         given()
                 .log().all()
         .when()
-                .get("people/1/")
+                .get("https://swapi.dev/api/people/1/")
         .then()
                 .log().all()
                 .statusCode(200)
@@ -34,7 +34,7 @@ public class Get extends BaseTest {
     authenticationSuccess() {
         given()
                 .log().all()
-                .auth().basic("admin", "senha")
+                .auth().basic(user, password)
         .when()
                 .get("basicauth")
         .then()

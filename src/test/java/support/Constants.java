@@ -4,7 +4,10 @@ import io.restassured.http.ContentType;
 
 public interface Constants {
 
-    String baseUrl1 = "https://swapi.dev/api/";
-    String baseUrl2 = "https://restapi.wcaquino.me/";
+    String baseUrl = "https://restapi.wcaquino.me/";
+
+    String user = "admin";
+    String password = "senha";
+
     ContentType contentType = ContentType.JSON;
 }
