@@ -29,4 +29,17 @@ public class Get extends BaseTest {
                 .log().all()
                 .statusCode(401);
     }
+
+    @Test public void
+    authenticationSuccess() {
+        given()
+                .log().all()
+                .auth().basic("admin", "senha")
+        .when()
+                .get("basicauth")
+        .then()
+                .log().all()
+                .statusCode(200)
+                .body("status", is("logado"));
+    }
 }
