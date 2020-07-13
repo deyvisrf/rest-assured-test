@@ -2,7 +2,12 @@ package spec;
 
 import org.junit.Test;
 import support.BaseTest;
+
+import java.util.HashMap;
+import java.util.Map;
+
 import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.when;
 import static org.hamcrest.Matchers.*;
 
 public class Get extends BaseTest {
@@ -41,5 +46,26 @@ public class Get extends BaseTest {
                 .log().all()
                 .statusCode(200)
                 .body("status", is("logado"));
+    }
+
+    @Test public void
+    authentiction() {
+        Map<String, String> postBody = new HashMap<>();
+
+        postBody.put("email", "teste@teste.me");
+        postBody.put("redirecionar", "false");
+        postBody.put("senha", "qwer");
+
+
+
+        given()
+                .log().all()
+                .body(postBody)
+        .when()
+                .post("https://barrigarest.wcaquino.me/signin")
+        .then()
+                .log().all()
+                .statusCode(200)
+                .body("token", is(notNullValue()));
     }
 }
